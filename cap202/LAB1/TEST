@@ -1,1 +1,59 @@
 
+
+Name :Boyd Bwalya Kaoma
+Section:1904
+Roll_Number:11917481
+
+//Write a program to find the area of a circle  and rectangle by overloading a function area//
+#include <iostream>
+using namespace std;
+ class test
+ {
+
+ private:
+    int s1,s2;
+ public:
+    void get(int x,int y)
+    {
+
+        s1=x;
+        s2=y;
+        }
+        int area_rec()
+        {
+            return(s1*s2);
+        }
+        int area_circ()
+        {
+            return(s1*(s2*s2));
+        }
+
+ }ob1,ob2;
+ int main()
+ {
+
+     int l,b,R,C,pi,r;
+     cout<<"enter the value of l and b\n";
+     cin>>l>>b;
+     ob1.get(l,b);
+     R=ob1.area_rec();
+     cout<<"area of rectangle is=\n"<<R;
+     cout<<"\nenter the value of PI and r\n";
+     cin>>pi>>r;
+     ob2.get(pi,r);
+     C=ob2.area_circ();
+     cout<<"area is of circle is="<<C;
+
+ }
+
+/* output
+enter the value of l and b
+2
+4
+area of rectangle is=8
+enter the value of PI and r
+4
+2
+area is of circle is=16
+
+*/
