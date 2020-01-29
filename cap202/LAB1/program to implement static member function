@@ -1,0 +1,31 @@
+#include<conio.h>
+#include<iostream.h>
+class A
+{
+int x;
+static int y;
+public:
+void get(int a)
+{
+x=a;
+y++;
+}
+void disp()
+{
+cout<<x<<" "<<y<<endl;
+}
+static void PR()
+{
+cout<<"\n"<<y<<endl;
+}
+};
+int A::y;
+void main()
+{
+clrscr();
+A ob1;
+A ob2;
+ob1.get(100);
+ob2.get(100);
+A::PR();
+}
