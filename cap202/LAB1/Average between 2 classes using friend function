@@ -3,9 +3,9 @@ using namespace std;
 class B;
 class A
 {
-int a;
+float a;
 public:
-void get(int x)
+void get(float x)
 {
 a=x;
 }
@@ -13,13 +13,13 @@ void disp()
 {
 cout<<"A="<<a;
 }
-friend int BIG(A,B);
+friend float BIG(A,B);
 };
 class B
 {
-int b;
+float b;
 public:
-void read(int x)
+void read(float x)
 {
 b=x;
 }
@@ -27,21 +27,21 @@ void print()
 {
 cout<<"\nB="<<b;
 }
-friend int BIG(A,B);
+friend float BIG(A,B);
 };
-int BIG(A M,B N)
+float BIG(A M,B N)
 {
-int avg;
+float avg;
 avg=(M.a+N.b)/2;
-
+return avg;
 }
 int main()
 {
 A OBA;
 B OBB;
-int R;
-OBA.get(100);
-OBB.read(200);
+float R;
+OBA.get(5);
+OBB.read(6);
 R=BIG(OBA,OBB);
 cout<<"Averge is ="<<R<<endl<<"Of\n";
 OBA.disp();
