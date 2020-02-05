@@ -1,0 +1,49 @@
+#include<iostream>
+using namespace std;
+class B;
+class A
+{
+int a;
+public:
+void get(int x)
+{
+a=x;
+}
+void disp()
+{
+cout<<"A="<<a;
+}
+friend int BIG(A,B);
+};
+class B
+{
+int b;
+public:
+void read(int x)
+{
+b=x;
+}
+void print()
+{
+cout<<"\nB="<<b;
+}
+friend int BIG(A,B);
+};
+int BIG(A M,B N)
+{
+int avg;
+avg=(M.a+N.b)/2;
+
+}
+int main()
+{
+A OBA;
+B OBB;
+int R;
+OBA.get(100);
+OBB.read(200);
+R=BIG(OBA,OBB);
+cout<<"Averge is ="<<R<<endl<<"Of\n";
+OBA.disp();
+OBB.print();
+}
