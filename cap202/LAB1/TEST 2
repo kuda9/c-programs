@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+class TEST
+{
+int a;
+int b;
+public:
+void get(int, int);
+void disp()
+{
+cout<<"A="<<a<<endl;
+cout<<"B="<<b<<endl;
+}
+friend int BIG(M);
+};
+void TEST::get(int x, int y)
+{
+a=x;
+b=y;
+}
+ int BIG(M)
+{
+int t;
+if(M.a>M.b)
+M.a=t;
+return t;
+else
+M.b=t;
+return t;
+}
+int main()
+{
+TEST obj;
+obj.get(10,20);
+obj.disp();
+cout<<"Greater no"<<obj.BIG();
+}
