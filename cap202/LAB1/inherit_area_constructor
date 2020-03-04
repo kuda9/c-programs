@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+class circle
+{
+int r;
+float ar;
+public:
+circle(int a)
+{
+r=a;
+}
+void disp()
+{
+cout<<"Area"<<3.14*r*r;
+}
+};
+class rectangle : public circle
+{
+int l,b;
+public:
+rectangle(int a, int n, int m):circle(a)
+{
+l=m;
+b=n;
+}
+void result()
+{
+cout<<"Area="<<l*b;
+}
+};
+int main()
+{
+int a,c,d;
+cout<<"Enter radius of circle:";
+cin>>a;
+cout<<"Enter sides:";
+cin>>c>>d;
+rectangle obj(a,c,d);
+cout<<"circle \n";
+obj.disp();
+cout<<"\n rectangle \n";
+obj.result();
+}
