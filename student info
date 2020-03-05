@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+class info
+{
+private:
+    int roll_no;
+    char name[50];
+    char email[50];
+    double pno;
+public:
+    info(int r,char *n, double no)
+    {
+        roll=r;
+        strcpy(name,n);
+        pno=no;
+    }
+};
+class academic:info
+{
+protected :
+    int m1,m2,m3,total;
+    char grd;
+
+public:
+    academic(int m1,int m2,int m3,int r,char *n, double no):info(r,n, double no)
+    disp()
+    {
+        cout<<"\nPersonal Details :-\n";
+        cout<<"Roll No. : "<<roll;
+        cout<<"\nName : "<<name;
+        cout<<"\nPhone No. : "<<pno;
+        cout<<"\nAcademic Details  : \n";
+        cout<<"\nSubject 1 :"<<m1;
+        cout<<"\nSubject 2 :"<<m2;
+        cout<<"\nSubject 3 :"<<m3;
+    }
+
+};
+int main()
+{
+    int r,m1,m2,m3;
+    char n[20];
+    double ph;
+    cout<<"Enter Details below : ";
+    cout<<"\nRoll No. : ";
+    cin>>r;
+    cout<<"\nName : ";
+    cin>>n;
+    cout<<"\nPhone No. : ";
+    cin>>ph;
+    info obj(r,n,ph);
+
+}
