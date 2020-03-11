@@ -1,0 +1,43 @@
+// C++ program to explain 
+// Single inheritance 
+#include <iostream> 
+using namespace std; 
+
+class Vehicle { 
+public: 
+	Vehicle() 
+	{ 
+	cout << "This is a Vehicle" << endl; 
+	} 
+}; 
+
+
+class Car: public Vehicle{ 
+
+}; 
+
+
+int main() 
+{ 
+	// creating object of sub class will 
+	// invoke the constructor of base classes 
+	Car obj; 
+	return 0; 
+} 
+
+#include <iostream>  
+using namespace std;  
+ class Account {  
+   public:  
+   float salary = 60000;   
+ };  
+   class Programmer: public Account {  
+   public:  
+   float bonus = 5000;    
+   };       
+int main(void) {  
+     Programmer p1;  
+     cout<<"Salary: "<<p1.salary<<endl;    
+     cout<<"Bonus: "<<p1.bonus<<endl;    
+    return 0;  
+}  
