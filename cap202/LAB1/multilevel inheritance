@@ -1,0 +1,70 @@
+// C++ program to implement 
+// Multilevel Inheritance 
+#include <iostream> 
+using namespace std; 
+
+class Vehicle 
+{ 
+public: 
+	Vehicle() 
+	{ 
+	cout << "This is a Vehicle" << endl; 
+	} 
+}; 
+class fourWheeler: public Vehicle 
+{ public: 
+	fourWheeler() 
+	{ 
+	cout<<"Objects with 4 wheels are vehicles"<<endl; 
+	} 
+}; 
+ 
+class Car: public fourWheeler{ 
+public: 
+	car() 
+	{ 
+	cout<<"Car has 4 Wheels"<<endl; 
+	} 
+}; 
+
+
+int main() 
+{ 
+	Car obj; 
+	return 0; 
+} 
+
+
+
+#include <iostream>
+using namespace std;
+
+class base {
+public:
+    void display1()
+    {
+        cout << "\nBase class content.";
+    }
+};
+class derived : public base {
+public:
+    void display2()
+    {
+        cout << "1st derived class content.";
+    }
+};
+
+class derived2 : public derived {
+    void display3()
+    {
+        cout << "\n2nd Derived class content.";
+    }
+};
+
+int main()
+{
+    derived2 D;
+    //D.display3();
+    D.display2();
+    D.display1();
+}
