@@ -1,0 +1,737 @@
+// C++ program to explain 
+// Single inheritance 
+#include <iostream> 
+using namespace std; 
+
+class Vehicle { 
+public: 
+	Vehicle() 
+	{ 
+	cout << "This is a Vehicle" << endl; 
+	} 
+}; 
+
+
+class Car: public Vehicle{ 
+
+}; 
+
+
+int main() 
+{ 
+	// creating object of sub class will 
+	// invoke the constructor of base classes 
+	Car obj; 
+	return 0; 
+} 
+
+#include <iostream>  
+using namespace std;  
+ class Account {  
+   public:  
+   float salary = 60000;   
+ };  
+   class Programmer: public Account {  
+   public:  
+   float bonus = 5000;    
+   };       
+int main(void) {  
+     Programmer p1;  
+     cout<<"Salary: "<<p1.salary<<endl;    
+     cout<<"Bonus: "<<p1.bonus<<endl;    
+    return 0;  
+}  
+
+// inheritance.cpp
+#include <iostream> 
+using namespace std; 
+class base    //single base class
+{
+   public:
+     int x;
+   void getdata()
+   {
+     cout << "Enter the value of x = "; cin >> x;
+   }
+ };
+class derive : public base    //single derived class
+{
+   private:
+    int y;
+   public:
+   void readdata()
+   {
+     cout << "Enter the value of y = "; cin >> y;
+   }
+   void product()
+   {
+     cout << "Product = " << x * y;
+   }
+ };
+ 
+ int main()
+ {
+    derive a;     //object of derived class
+    a.getdata();
+    a.readdata();
+    a.product();
+    return 0;
+ }         //end of program
+// C++ program to explain 
+// multiple inheritance 
+#include <iostream> 
+using namespace std; 
+
+class Vehicle { 
+public: 
+	Vehicle() 
+	{ 
+	cout << "This is a Vehicle" << endl; 
+	} 
+}; 
+
+class FourWheeler { 
+public: 
+	FourWheeler() 
+	{ 
+	cout << "This is a 4 wheeler Vehicle" << endl; 
+	} 
+}; 
+
+class Car: public Vehicle, public FourWheeler { 
+
+}; 
+
+int main() 
+{ 
+
+	Car obj; 
+	return 0; 
+} 
+
+Program for Multiple Inheritance:
+#include <iostream>
+using namespace std;
+
+class stud {
+protected:
+    int roll, m1, m2;
+
+public:
+    void get()
+    {
+        cout << "Enter the Roll No.: "; cin >> roll;
+        cout << "Enter the two highest marks: "; cin >> m1 >> m2;
+    }
+};
+class extracurriculam {
+protected:
+    int xm;
+
+public:
+    void getsm()
+    {
+        cout << "\nEnter the mark for Extra Curriculam Activities: "; cin >> xm;
+    }
+};
+class output : public stud, public extracurriculam {
+    int tot, avg;
+
+public:
+    void display()
+    {
+        tot = (m1 + m2 + xm);
+        avg = tot / 3;
+        cout << "\n\n\tRoll No    : " << roll << "\n\tTotal      : " << tot;
+        cout << "\n\tAverage    : " << avg;
+    }
+};
+int main()
+{
+    output O;
+    O.get();
+    O.getsm();
+    O.display();
+}
+
+
+
+
+// C++ program to implement 
+// Multilevel Inheritance 
+#include <iostream> 
+using namespace std; 
+
+class Vehicle 
+{ 
+public: 
+	Vehicle() 
+	{ 
+	cout << "This is a Vehicle" << endl; 
+	} 
+}; 
+class fourWheeler: public Vehicle 
+{ public: 
+	fourWheeler() 
+	{ 
+	cout<<"Objects with 4 wheels are vehicles"<<endl; 
+	} 
+}; 
+ 
+class Car: public fourWheeler{ 
+public: 
+	car() 
+	{ 
+	cout<<"Car has 4 Wheels"<<endl; 
+	} 
+}; 
+
+
+int main() 
+{ 
+	Car obj; 
+	return 0; 
+} 
+
+
+
+#include <iostream>
+using namespace std;
+
+class base {
+public:
+    void display1()
+    {
+        cout << "\nBase class content.";
+    }
+};
+class derived : public base {
+public:
+    void display2()
+    {
+        cout << "1st derived class content.";
+    }
+};
+
+class derived2 : public derived {
+    void display3()
+    {
+        cout << "\n2nd Derived class content.";
+    }
+};
+
+int main()
+{
+    derived2 D;
+    //D.display3();
+    D.display2();
+    D.display1();
+}
+
+
+// C++ program to implement 
+// Hierarchical Inheritance 
+#include <iostream> 
+using namespace std; 
+
+class Vehicle 
+{ 
+public: 
+	Vehicle() 
+	{ 
+	cout << "This is a Vehicle" << endl; 
+	} 
+}; 
+
+
+class Car: public Vehicle 
+{ 
+
+}; 
+
+class Bus: public Vehicle 
+{ 
+	
+}; 
+
+// main function 
+int main() 
+{ 
+	
+	Car obj1; 
+	Bus obj2; 
+	return 0; 
+} 
+
+
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+class member {
+    char gender[10];
+    int age;
+
+public:
+    void get()
+    {
+        cout << "Age: "; cin >> age;
+        cout << "Gender: "; cin >> gender;
+    }
+    void disp()
+    {
+        cout << "Age: " << age << endl;
+        cout << "Gender: " << gender << endl;
+    }
+};
+class stud : public member {
+    char level[20];
+
+public:
+    void getdata()
+    {
+        member::get();
+        cout << "Class: "; cin >> level;
+    }
+    void disp2()
+    {
+        member::disp();
+        cout << "Level: " << level << endl;
+    }
+};
+class staff : public member {
+    float salary;
+
+public:
+    void getdata()
+    {
+        member::get();
+        cout << "Salary: Rs."; cin >> salary;
+    }
+    void disp3()
+    {
+        member::disp();
+        cout << "Salary: Rs." << salary << endl;
+    }
+};
+int main()
+{
+    member M;
+    staff S;
+    stud s;
+    cout << "Student" << endl;
+    cout << "Enter data" << endl;
+    s.getdata();
+    cout << endl
+         << "Displaying data" << endl;
+    s.disp();
+    cout << endl
+         << "Staff Data" << endl;
+    cout << "Enter data" << endl;
+    S.getdata();
+    cout << endl
+         << "Displaying data" << endl;
+    S.disp();
+}
+
+
+// C++ program for Hybrid Inheritance 
+
+#include <iostream> 
+using namespace std; 
+
+
+class Vehicle 
+{ 
+public: 
+	Vehicle() 
+	{ 
+	cout << "This is a Vehicle" << endl; 
+	} 
+}; 
+
+
+class Fare 
+{ 
+	public: 
+	Fare() 
+	{ 
+		cout<<"Fare of Vehicle\n"; 
+	} 
+}; 
+
+class Car: public Vehicle 
+{ 
+
+}; 
+
+
+class Bus: public Vehicle, public Fare 
+{ 
+	
+}; 
+
+// main function 
+int main() 
+{ 
+	
+	Bus obj2; 
+	return 0; 
+} 
+
+
+// hybrid inheritance.cpp
+#include <iostream>
+using namespace std;
+
+class A
+{
+ 	public:
+ 	int x;
+};
+class B : public A
+{
+ 	public:
+ 	B()      
+ 	{
+ 	   x = 10;
+ 	}
+};
+class C
+ {
+ 	public:
+ 	int y;
+ 	C()   
+ 	{
+ 	    y = 4;
+        }
+};
+class D : public B, public C   
+{
+ 	public:
+ 	void sum()
+ 	{
+ 	    cout << "Sum= " << x + y;
+ 	}
+};
+
+int main()
+{
+         D obj1;          
+ 	obj1.sum();
+ 	return 0;
+}               	
+
+#include <iostream>  
+using namespace std;  
+class A  
+{  
+    protected:  
+     int a;  
+    public:  
+    void get_a(int n)  
+    {  
+        a = n;  
+    }  
+};  
+  
+class B  
+{  
+    protected:  
+    int b;  
+    public:  
+    void get_b(int n)  
+    {  
+        b = n;  
+    }  
+};  
+class C : public A,public B  
+{  
+   public:  
+    void display()  
+    {  
+        std::cout << "The value of a is : " <<a<< std::endl;  
+        std::cout << "The value of b is : " <<b<< std::endl;  
+        cout<<"Addition of a and b is : "<<a+b;  
+    }  
+};  
+int main()  
+{  
+   C c;  
+   c.get_a(10);  
+   c.get_b(20);  
+   c.display();  
+  
+    return 0;  
+}  
+
+
+ambiguity resolution
+#include <iostream>  
+using namespace std;  
+class A  
+{  
+    public:  
+    void display()  
+    {  
+        std::cout << "Class A" << std::endl;  
+    }  
+};  
+class B  
+{  
+    public:  
+    void display()  
+    {  
+        std::cout << "Class B" << std::endl;  
+    }  
+};  
+class C : public A, public B  
+{  
+    void view()  
+    {  
+        display();  
+    }  
+};  
+int main()  
+{  
+    C c;  
+    c.display();  
+    return 0;  
+}  
+
+#include <iostream>  
+using namespace std;  
+class A  
+{  
+    protected:  
+    int a;  
+    public:  
+    void get_a()  
+    {  
+       std::cout << "Enter the value of 'a' : " << std::endl;  
+       cin>>a;  
+    }  
+};  
+  
+class B : public A   
+{  
+    protected:  
+    int b;  
+    public:  
+    void get_b()  
+    {  
+        std::cout << "Enter the value of 'b' : " << std::endl;  
+       cin>>b;  
+    }  
+};  
+class C   
+{  
+    protected:  
+    int c;  
+    public:  
+    void get_c()  
+    {  
+        std::cout << "Enter the value of c is : " << std::endl;  
+        cin>>c;  
+    }  
+};  
+  
+class D : public B, public C  
+{  
+    protected:  
+    int d;  
+    public:  
+    void mul()  
+    {  
+         get_a();  
+         get_b();  
+         get_c();  
+         std::cout << "Multiplication of a,b,c is : " <<a*b*c<< std::endl;  
+    }  
+};  
+int main()  
+{  
+    D d;  
+    d.mul();  
+    return 0;  
+}  
+
+
+#include <iostream>  
+using namespace std;  
+class Shape                 // Declaration of base class.  
+{  
+    public:  
+    int a;  
+    int b;  
+    void get_data(int n,int m)  
+    {  
+        a= n;  
+        b = m;  
+    }  
+};  
+class Rectangle : public Shape  // inheriting Shape class  
+{  
+    public:  
+    int rect_area()  
+    {  
+        int result = a*b;  
+        return result;  
+    }  
+};  
+class Triangle : public Shape    // inheriting Shape class  
+{  
+    public:  
+    int triangle_area()  
+    {  
+        float result = 0.5*a*b;  
+        return result;  
+    }  
+};  
+int main()  
+{  
+    Rectangle r;  
+    Triangle t;  
+    int length,breadth,base,height;  
+    std::cout << "Enter the length and breadth of a rectangle: " << std::endl;  
+    cin>>length>>breadth;  
+    r.get_data(length,breadth);  
+    int m = r.rect_area();  
+    std::cout << "Area of the rectangle is : " <<m<< std::endl;  
+    std::cout << "Enter the base and height of the triangle: " << std::endl;  
+    cin>>base>>height;  
+    t.get_data(base,height);  
+    float n = t.triangle_area();  
+    std::cout <<"Area of the triangle is : "  << n<<std::endl;  
+    return 0;  
+}  
+
+#include <iostream>
+ 
+using namespace std;
+class First {
+    protected:
+    int a;
+    public:
+    void getinfofirst(int x){
+        a = x;
+    }
+    void showinfofirst(){
+        std::cout << "Value of a = " <<a << std::endl;
+    }
+};
+ 
+class Second : public First{
+    protected:
+    int b;
+    int c;
+    public:
+    void getinfosecond(int y, int z){
+        b = y;
+        c = z;
+    }
+    void showinfosecond(){
+        cout<<"Value of b = "<<b<<"n";
+         cout<<"Value of c = "<<c<<"n";
+    }
+     
+};
+ 
+class Third : public Second{
+    int d;
+    public:
+    void display(){
+        d = b + c;          //Using member variables of class second
+        showinfofirst();    //Using member function of class First
+        showinfosecond();   //Using member function of class second
+        cout<<"Value of d = "<<d<<"n";
+         
+    }
+};
+ 
+ 
+int main()
+{
+    Third third;
+    third.getinfofirst(10);
+    third.getinfosecond(20, 30);
+    third.display();
+    return 0;
+     
+     
+}
+
+
+#include <iostream> 
+using namespace std; 
+   
+ 
+class College  
+{ 
+  public: 
+    College() 
+    { 
+      cout << "We are in class College" << endl; 
+    } 
+}; 
+ 
+class Student: public College 
+{ 
+   
+}; 
+   
+class Faculty: public College 
+{ 
+       
+}; 
+   
+int main() 
+{    
+     
+    Student student; 
+    Faculty faculty; 
+    return 0; 
+}
+
+
+#include <iostream> 
+using namespace std; 
+   
+  class One{
+      protected:
+      int a;
+      public:
+      void getinfoOne(int x){
+          a = x;
+      }
+       };
+class Two {
+    protected:
+    int b;
+    public:
+    void getinfoTwo(int y){
+         
+        b = y;
+    }
+     
+};
+ 
+class Main : public One, public Two{
+     
+    public : 
+        void Display(){
+        std::cout << "Value of a = " <<a<< std::endl;   //accessing member variables of class One
+        std::cout << "Value of b = " <<b<< std::endl;    //accessing member variables of class Two
+        std::cout << "Value of c = " <<a+b<< std::endl;
+    }
+     
+};
+int main() 
+{    
+    Main main;
+    main.getinfoOne(10);  //accessing member function of class One
+    main.getinfoTwo(20);  //accessing member function of class Two
+    main.Display();
+      
+    return 0; 
+}
